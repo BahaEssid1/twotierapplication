@@ -50,12 +50,16 @@ Ensuite, accéder à l'application :
 Pour arrêter les services :
 docker compose down
 
+---
+
 ## 🧪 Tests & Vérifications
 Vérifier les conteneurs :
 docker ps
 
 Tester la communication entre services :
 docker exec -it contacts-frontend ping contacts-db
+
+---
 
 ## 📝 Résumé du Compte Rendu
 Le TP montre les limites du déploiement manuel (multiples commandes, dépendances, réseau, persistance…).
@@ -71,6 +75,8 @@ centralisation de la configuration
 reproductibilité
 
 Le fichier docker-compose.yml remplace désormais toutes les commandes manuelles.
+
+---
 
 ## 📌 Conclusion
 Docker Compose facilite considérablement le déploiement multi-conteneurs, offrant une solution claire, automatisée et facile à partager.
