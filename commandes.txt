@@ -1,0 +1,29 @@
+# 1. Build the frontend Docker image
+docker build -t contacts-frontend .
+
+# 2. Build the database Docker image
+docker build -t contacts-db .
+
+# 3. Verify that the images were created successfully
+docker images
+
+# 4. Create a custom Docker bridge network for container communication
+docker network create --driver bridge contacts-network
+
+# 5. Run the database container and connect it to the custom network
+     - Set MySQL root password
+     - Map port 3306 inside the container to 3307 on the host
+docker run -d --name contacts-db --network contacts-network -e MYSQL_ROOT_PASSWORD=rootpassword -p 3307:3306 contacts-db
+
+# 6. Run the frontend container and connect it to the same network
+     - Map port 3000 inside the container to 3000 on the host
+docker run -d --name contacts-frontend --network contacts-network -p 3000:3000 contacts-frontend
+
+# 7. Verify that the containers are running
+docker ps
+
+# 8. Access the frontend container's shell
+docker exec -it contacts-frontend sh
+
+# 9. Test connectivity from the frontend container to the database container
+ping contacts-db

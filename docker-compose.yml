@@ -1,0 +1,25 @@
+services:
+  db:
+    image: contacts-db
+    container_name: contacts-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: contactsdb
+    ports:
+      - "3308:3306"
+    networks:
+      - contacts-network
+
+  frontend:
+    build: ./frontend
+    container_name: contacts-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - contacts-network
+
+networks:
+  contacts-network:
+    driver: bridge
