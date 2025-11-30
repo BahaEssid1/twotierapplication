@@ -3,7 +3,7 @@
 Ce projet implémente une application simple de gestion de contacts en utilisant une architecture multi-conteneurs avec **Docker Compose**. L’objectif initial du TP était de déployer les conteneurs manuellement afin d’en montrer la complexité, puis de simplifier le tout grâce à Docker Compose.
 
 ---
-
+```
 ## 📁 Structure du projet
 
 tp-docker-contacts/
@@ -20,9 +20,6 @@ tp-docker-contacts/
 └── database/
 ├── Dockerfile
 └── init.sql
-
-yaml
-Copy code
 
 ---
 
@@ -45,24 +42,19 @@ Elle repose sur deux services :
 ## 🚀 Quick Start – Lancer l’application
 
 Grâce à Docker Compose, une seule commande suffit :
-
-```bash
 docker compose up -d
-Ensuite, accéder à l'application :
 
+Ensuite, accéder à l'application :
 👉 http://localhost:3000
 
 Pour arrêter les services :
-
-```bash
 docker compose down
+
 🧪 Tests & Vérifications
 Vérifier les conteneurs :
-
 docker ps
 
 Tester la communication entre services :
-
 docker exec -it contacts-frontend ping contacts-db
 
 📝 Résumé du Compte Rendu
