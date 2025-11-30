@@ -3,23 +3,23 @@
 Ce projet implémente une application simple de gestion de contacts en utilisant une architecture multi-conteneurs avec **Docker Compose**. L’objectif initial du TP était de déployer les conteneurs manuellement afin d’en montrer la complexité, puis de simplifier le tout grâce à Docker Compose.
 
 ---
-```
-## 📁 Structure du projet
 
-tp-docker-contacts/
-├── commandes.txt
-├── docker-compose.yml
-├── frontend/
-│ ├── Dockerfile
-│ ├── server.js
-│ ├── public/
-│ │ ├── index.html
-│ │ ├── app.js
-│ │ └── style.css
-│ └── package.json
-└── database/
-├── Dockerfile
-└── init.sql
+    ## 📁 Structure du projet
+    
+    tp-docker-contacts/
+    ├── commandes.txt
+    ├── docker-compose.yml
+    ├── frontend/
+    │ ├── Dockerfile
+    │ ├── server.js
+    │ ├── public/
+    │ │ ├── index.html
+    │ │ ├── app.js
+    │ │ └── style.css
+    │ └── package.json
+    └── database/
+    ├── Dockerfile
+    └── init.sql
 
 ---
 
